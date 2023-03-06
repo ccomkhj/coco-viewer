@@ -230,7 +230,7 @@ def draw_masks(draw, objects, obj_categories, ignore, alpha):
 
                 mask = pymask.decode(m)
                 # mask = rle_to_mask(m["counts"][:-1], m["size"][0], m["size"][1])
-                mask = Image.fromarray(mask)
+                mask = Image.fromarray(mask * 255)
                 draw.bitmap((0, 0), mask, fill=fill)
 
             else:
